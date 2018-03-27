@@ -3,3 +3,5 @@
 table(vector)
 #to know the proportions in a matrix use prop.table function or use prop.table(table(x)
 prop.table(table(x)
+#to create an empty dataframe with same columns as another data frame but zero observations
+dataframe_empty<-df[0,] #where df is the data frame which we want to copy 
