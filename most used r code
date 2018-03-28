@@ -5,3 +5,8 @@ table(vector)
 prop.table(table(x)
 #to create an empty dataframe with same columns as another data frame but zero observations
 dataframe_empty<-df[0,] #where df is the data frame which we want to copy 
+#greedy string matching using .* reguler expression
+c<-"  Borrower added on 12/22/11 > I need to upgrade my business technologies.<br>"
+sub("^.*>","",c) #This code matches till the last ">" symbol
+#to make this matching non greedy use ? after .*"in reguler expression that is .*?
+sub("^.*?>","",c) #This code matches only till the first ">" symbol
