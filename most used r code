@@ -11,3 +11,10 @@ sub("^.*>","",c) #This code matches till the last ">" symbol
 #to make this matching non greedy use ? after .*"in reguler expression that is .*?
 sub("^.*?>","",c) #This code matches only till the first ">" symbol
 #extract a particular part from a string in r
+
+
+
+
+###########################ggplot#################################################
+##to change the angle of labels on x axis
+theme(axis.text.x = element_text(angle = 90, hjust = 1))
