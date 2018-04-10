@@ -1,0 +1,7 @@
+#to replace special characters like "." or "*" you need to escape them with "//" escape characters 
+vector <- c("21","34","99*","56","90*", "45*")#replace the "*" here with blank "" and convert to numeric vector
+gsub("*$","",vector) #this doesn't work as "*" is special character ,so we need to escape it with "//"
+gsub("//*$","",vector) #this gives the expected result
+
+
+
