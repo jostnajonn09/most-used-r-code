@@ -12,9 +12,15 @@ sub("^.*>","",c) #This code matches till the last ">" symbol
 sub("^.*?>","",c) #This code matches only till the first ">" symbol
 #extract a particular part from a string in r
 
-
+#checking for numeric variables in a dataframe
+numvar<-sapply(dataframe,is.numeric) %>% unlist %>% which()
+colnames(dataframe[,numvar])
 
 
 ###########################ggplot#################################################
 ##to change the angle of labels on x axis
 theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+
+
+
