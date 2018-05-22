@@ -16,6 +16,13 @@ sub("^.*?>","",c) #This code matches only till the first ">" symbol
 numvar<-sapply(dataframe,is.numeric) %>% unlist %>% which()
 colnames(dataframe[,numvar])
 
+#creating an empty dataframe df with same column names and rows as other datframe DF
+df <- data.frame(matrix(ncol = 3, nrow = 0))
+x <- colnames(DF)
+colnames(df) <- x
+
+
+
 ##Removing all columns which have  only missing values(NA's) in dataframe DF
 
 check_na<-function(x){
