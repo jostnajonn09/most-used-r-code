@@ -16,6 +16,17 @@ sub("^.*?>","",c) #This code matches only till the first ">" symbol
 numvar<-sapply(dataframe,is.numeric) %>% unlist %>% which()
 colnames(dataframe[,numvar])
 
+#Removing all columns which have  only missing values(NA's)
+
+check_na<-function(x){
+  if (length(unique(x))==1 & is.na(unique(x))){
+    x<-NULL
+    return(NULL)
+    
+  }else{
+    return(x)
+  }
+} 
 
 ###########################ggplot#################################################
 ##to change the angle of labels on x axis
