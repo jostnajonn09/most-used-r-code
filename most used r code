@@ -8,6 +8,14 @@ x <- colnames(DF)
 colnames(df) <- x
 
 
+#listing all the numeric variables in dataframe DF
+numvar<-sapply(DF,is.numeric) %>% unlist %>% which()
+colnames(DF[,numvar])
+
+#listing all the character and factor type variables in dataframe DF
+chavar<-sapply(DF,is.character) %>% unlist %>% which()
+colnames(DF[,chavar])
+
 #to know the frequencies of a vector or combination of vectors together use table function
 table(vector)
 #to know the proportions in a matrix use prop.table function or use prop.table(table(x)
