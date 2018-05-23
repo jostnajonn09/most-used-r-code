@@ -1,10 +1,18 @@
 #################general base r code#########################
+#to create an empty dataframe with same columns as another data frame but zero observations
+dataframe_empty<-df[0,] #where df is the data frame which we want to copy 
+#or you can use this
+#creating an empty dataframe df with same column names and rows as other datframe DF
+df <- data.frame(matrix(ncol = 3, nrow = 0))
+x <- colnames(DF)
+colnames(df) <- x
+
+
 #to know the frequencies of a vector or combination of vectors together use table function
 table(vector)
 #to know the proportions in a matrix use prop.table function or use prop.table(table(x)
 prop.table(table(x)
-#to create an empty dataframe with same columns as another data frame but zero observations
-dataframe_empty<-df[0,] #where df is the data frame which we want to copy 
+
 #greedy string matching using .* reguler expression
 c<-"  Borrower added on 12/22/11 > I need to upgrade my business technologies.<br>"
 sub("^.*>","",c) #This code matches till the last ">" symbol
@@ -16,10 +24,7 @@ sub("^.*?>","",c) #This code matches only till the first ">" symbol
 numvar<-sapply(dataframe,is.numeric) %>% unlist %>% which()
 colnames(dataframe[,numvar])
 
-#creating an empty dataframe df with same column names and rows as other datframe DF
-df <- data.frame(matrix(ncol = 3, nrow = 0))
-x <- colnames(DF)
-colnames(df) <- x
+
 
 
 
