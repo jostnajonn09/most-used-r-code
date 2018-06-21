@@ -1,4 +1,11 @@
 #################general base r code#########################
+#checking for a package if it's installed or not ,and installing it if it's not installed
+if(!"gridExtra" %in% rownames(installed.packages())){
+  install.packages(gridExtra)
+  }
+
+
+
 #to create an empty dataframe with same columns as another data frame but zero observations
 dataframe_empty<-df[0,] #where df is the data frame which we want to copy 
 #or you can use this
