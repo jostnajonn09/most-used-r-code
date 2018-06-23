@@ -39,7 +39,11 @@ sub("^.*?>","",c) #This code matches only till the first ">" symbol
 numvar<-sapply(dataframe,is.numeric) %>% unlist %>% which()
 colnames(dataframe[,numvar])
 
-
+#scaling all the numeric variables dataset
+data_digit<-scale(data_digit)
+#checking if it is done correctly from the following code
+colMeans(data_digit)  # faster version of apply(scaled.dat, 2, mean)
+apply(data_digit, 2, sd)
 
 
 
