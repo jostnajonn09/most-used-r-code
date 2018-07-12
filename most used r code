@@ -4,7 +4,8 @@ if(!"gridExtra" %in% rownames(installed.packages())){
   install.packages(gridExtra)
   }
 
-
+#loading the a list of packages using library function with sapply
+sapply(c("highcharter","zoo","ggplot2","gridExtra","ggExtra"), library, character.only = T, logical.return = T, quietly = T, warn.conflicts = F)
 
 #to create an empty dataframe with same columns as another data frame but zero observations
 dataframe_empty<-df[0,] #where df is the data frame which we want to copy 
