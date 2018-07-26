@@ -14,6 +14,8 @@ dataframe_empty<-df[0,] #where df is the data frame which we want to copy
 df <- data.frame(matrix(ncol = 3, nrow = 0))
 x <- colnames(DF)
 colnames(df) <- x
+#to check if a dataframe is grouped by another variable
+is.grouped_df(df)#will return true if it'sgrouped by else false
 
 
 #listing all the numeric variables in dataframe DF
