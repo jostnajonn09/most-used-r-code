@@ -1,8 +1,16 @@
 #################general base r code#########################
 #checking for a package if it's installed or not ,and installing it if it's not installed
+#first method
 if(!"gridExtra" %in% rownames(installed.packages())){
   install.packages(gridExtra)
   }
+#There are many ways to load libraries in R. I found pacman approach quite useful compared to others. 
+#Specifically, p_load function loads the library if package is already installed. 
+#If specified package is not installed then p_load function will install it and then load it.
+
+if (!require("pacman")) install.packages("pacman")
+pacman::p_load(knitr, tidyverse, highcharter, data.table, lubridate, pROC, tictoc, DescTools, lightgbm)
+
 
 #loading the a list of packages using library function with sapply
 sapply(c("highcharter","zoo","ggplot2","gridExtra","ggExtra"), library, character.only = T, logical.return = T, quietly = T, warn.conflicts = F)
