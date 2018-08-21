@@ -25,6 +25,9 @@ colnames(df) <- x
 #to check if a dataframe is grouped by another variable
 is.grouped_df(df)#will return true if it'sgrouped by else false
 
+#unique values by each feature in a dataframe as a table can be given as
+kable(as.data.frame(lapply(dataframe, function(x)length(unique(x)))))
+
 
 #listing all the numeric variables in dataframe DF
 numvar<-sapply(DF,is.numeric) %>% unlist %>% which()
