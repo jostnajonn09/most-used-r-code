@@ -41,6 +41,10 @@ colnames(DF[,chavar])
 table(vector)
 #to know the proportions in a matrix use prop.table function or use prop.table(table(x)
 prop.table(table(x)
+#to convert the o/p of a table function to dataframe as it is ,with row names included as a seperate column
+a<-table(df$i,df$j) %>%  as.data.frame.matrix() 
+a<-setDT(a, keep.rownames = TRUE)[]
+a<-cbind(a[,1],apply(a[,-1],1,sum)) %>% arrange(desc(V2))
 
 #greedy string matching using .* reguler expression
 c<-"  Borrower added on 12/22/11 > I need to upgrade my business technologies.<br>"
